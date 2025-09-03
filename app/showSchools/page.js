@@ -1,13 +1,14 @@
 export const dynamic = "force-dynamic";
 
 async function fetchSchools() {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-    // process.env.NEXT_PUBLIC_BASE_URL;
+  // Figure out base URL
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
   const res = await fetch(`${baseUrl}/api/schools`, {
     cache: "no-store",
   });
+  console.log("this is response:",res)
+  // const res = await fetch("/api/schools", { cache: "no-store" });
   const data = await res.json();
   if (!res.ok) throw new Error(data.message || "Failed to fetch");
   return data.data || [];

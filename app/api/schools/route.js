@@ -14,9 +14,9 @@ export async function GET() {
     );
     return NextResponse.json({ success: true, data: rows });
   } catch (err) {
-    console.error(err);
+    console.error("DB connection failed:", err);
     return NextResponse.json(
-      { success: false, message: "DB error" },
+      { success: false, message: "DB error", detail: err.message },
       { status: 500 }
     );
   }

@@ -8,7 +8,6 @@ async function fetchSchools() {
     cache: "no-store",
   });
   console.log("this is response:",res)
-  // const res = await fetch("/api/schools", { cache: "no-store" });
   const data = await res.json();
   if (!res.ok) throw new Error(data.message || "Failed to fetch");
   return data.data || [];

@@ -6,12 +6,14 @@ const Footer = () => {
   return (
     <footer className=" bg-gray-900 text-gray-300 py-6">
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+        <Link href="/">
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">
             S
           </div>
           <span className="text-lg font-semibold">School Directory</span>
         </div>
+        </Link>
 
         <div className="flex space-x-6 text-sm">
           <Link href="/" className="hover:text-white">Home</Link>
